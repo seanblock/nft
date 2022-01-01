@@ -1,5 +1,5 @@
 :root {
-  --cube: 200px;
+  --cube: 100px;
   --cube-front-color: var(--cube-front-color);
   --cubeHalf: calc(var(--cube) / 2);
   --front: #202020;
@@ -47,21 +47,6 @@ body {
 .item-row {
   display: flex;
 }
-
-/* @keyframes rotate {
-  0% {
-    transform: rotateZ(0) rotateZ(0) rotateY(10deg);
-  }
-  
-  100% {
-    transform: rotateZ(0) rotateZ(0) rotateY(0);
-  }
-} */
-
-/* .cube:nth-child(3n+2) {
-  transform: 
-    translateZ(calc(var(--cube) * 1.5))translateX(calc(var(--cubeHalf) * -2) ) rotateZ(0) rotateZ(0) rotateX(-90deg);
-} */
 
 .cube {
   display: flex;
