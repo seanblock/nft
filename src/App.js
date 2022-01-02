@@ -68,9 +68,21 @@ function App() {
       </Navbar>
       <div id="grid-system">
         <div id="sidebar">
-          <ul>
-            <li>OpenSeas</li>
-          </ul>
+          <Row>
+            <Col>
+              <label for="customRange2" className="form-label">
+                <h3>Cube Size</h3>
+              </label>
+              <input 
+                type="range" 
+                className="form-range" 
+                min="150" max="400" 
+                id="customRange2" 
+                defaultValue={zoom}
+                onChange={(e)=>{setZoom(e.target.value)}}
+              />            
+            </Col>
+          </Row>
         </div>
         <div id="nft">
           <Container className="preserve pb-5">
