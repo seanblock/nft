@@ -1,52 +1,82 @@
 :root {
-  --cube: 100px;
+  --cube: 260px;
   --cube-front-color: var(--cube-front-color);
   --cubeHalf: calc(var(--cube) / 2);
   --front: #202020;
-  --front2: rgb(114, 99, 17);
+  --front2: rgb(80, 80, 80);
+  --rotateWallX: 0;
+
+  --blue: rgb(0, 174, 255);
+  --red: rgb(247, 104, 104);
+  --green: #66fa9f;
+  --dark: rgb(121, 121, 121);
+  --orange: rgb(241, 174, 86);
+  --purple: rgb(173, 47, 167);
+
+  --preserve: 0;
+  --origin: 0;
+
 }
 
 body {
   background-color: black;
-  overflow: hidden;
 }
 
-#header {
+#grid-system {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: auto;
+}
+
+#sidebar {
+  background: linear-gradient(to right, #34a6e8, #297d9e);
+  grid-column: 1 / 2;
+  padding-top: 80px;
+  height: auto;
+}
+
+#nft {
   background-color: black;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  perspective: 100em;
-  perspective-origin: 50%;
-  overflow: hidden;
-  transition: all ease 1s;
-  position: relative;
-}
-
-#wall {
-  position: relative;
-  background: radial-gradient(circle, rgb(60, 108, 146) 3%, rgba(151, 148, 233, 0) 65%);  
   width: 100%;
-  height: 100%;
+  height: auto;
+  position: relative;
+  grid-column: 2 / 3;
+  padding: 50px 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transform-style: preserve-3d;
-  transition: all linear 3s;
-  transform: rotateZ(0) rotateZ(0) rotateY(0);
-  animation: 10s infinite rotate linear alternate;
-  border-radius: 50%;  
+  justify-content: center;
 }
 
-.row2 {
-  transform: translateX(75deg);
-  transform-style: preserve-3d;
+/* #nft > .container {
+  max-width: 1080px;
+} */
+
+.title {
+  font-size: 10em;
+  color: rgb(196, 196, 196);
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.row-cols-auto {
+  max-width: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .item-row {
   display: flex;
+}
+
+.preserve {
+  transform-style: preserve-3d;
+}
+
+.perspective {
+  perspective: 3000px;
+  perspective-origin: 50% var(--origin);
 }
 
 .cube {
@@ -79,16 +109,59 @@ body {
   border: solid 1px rgb(0, 0, 0);
 }
 
+.cube-back::after,
+.cube-left::after,
+.cube-right::after,
+.cube-top::after,
+.cube-bottom::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all linear .3s;
+  box-shadow: 0 0 3em rgb(32, 32, 32) inset;
+  background: radial-gradient(
+    circle at center, 
+    rgba(255, 255, 255, 0.836) 10%, 
+    rgba(255, 255, 255, 0.445) 
+    transparent 40%) !important;
+}
+
 .dark-box {
-  background: radial-gradient(circle, rgb(165, 167, 168) 23%, rgb(90, 90, 90) 68%, rgba(0,0,0,1) 98%) !important;
+  background: var(--dark);
 }
 
 .red-box {
-  background: radial-gradient(circle, rgb(219, 143, 143) 23%, rgb(199, 77, 77) 68%, rgba(0,0,0,1) 98%) !important;
+  background: var(--red);
 }
 
 .blue-box {
-  background: radial-gradient(circle, rgba(194,221,237,1) 23%, rgb(121, 160, 190) 68%, rgba(0,0,0,1) 98%) !important;
+  background: var(--blue);
+}
+
+.green-box {
+  background: var(--green);
+}
+
+.orange-box {
+  background: var(--orange);
+}
+
+.purple-box {
+  background: var(--purple);
+}
+
+.strobe-box {
+  animation: strobeColors 1s infinite alternate;
+}
+
+@keyframes strobeColors{
+  0% {background: var(--red);}
+  25% {background: var(--orange);}
+  50% {background: var(--green);}
+  75% {background: var(--blue);}
+  100% {background: var(--purple);}
+
 }
 
 .cube-front {
@@ -104,7 +177,7 @@ body {
 }
 
 .cube-front2 {
-  transform: translateZ(var(--cubeHalf))  rotateY(-90deg);
+  transform: translateZ(var(--cubeHalf))  rotateY(-150deg);
   transition-delay: .5s;
 }
 
@@ -202,12 +275,12 @@ body {
 
 .glass-door2 {
   box-shadow: 0px 0px 0px 50px var(--front2)!important;
-  transition: all ease .25s;
+  /* transition: all ease .25s; */
 }
 
 .glass-door2::before {
   box-shadow: 0px 0px 0px 50px var(--front2) !important;
-  transition: all ease .25s;
+  /* transition: all ease .25s; */
 }
 
 .cube-back { 

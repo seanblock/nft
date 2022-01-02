@@ -7,44 +7,234 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const [zoom, setZoom] = useState(250);
+  const [rotate, setRotate] = useState(0);
   const [rowCount, setRowCount] = useState(1);
   const [colCount, setColCount] = useState(1);
-  const [color, setColor] = useState("dark");
+  const [color, setColor] = useState("green");
 
-  const generate = () => {
-    let array = [];
+  const [nftList, setNftlist] = useState([
+    {
+      color: "red",
+      season: "01",
+      name: "The Dog",
+      nft: "dog",
+      number: "0001",
+    },
+    {
+      color: "green",
+      season: "01",
+      name: "The Dog",
+      nft: "dog",
+      number: "0002",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
+    {
+      color: "blue",
+      season: "01",
+      name: "The Cat",
+      nft: "cat",
+      number: "0001",
+    },
 
-    for(let i=0; i < rowCount; i++){
-      array.push(
-        <div className='row2'>
-          {createBoxes()}
-        </div>
-      );
-    } 
 
-    return(array.map((item) =>{
-      return(item)
-    }))
-  }
+  ])
 
-  const createBoxes = () => {
-    let array = [];
-
-    for(let i=0; i < colCount; i++){
-      array.push(
-        <Cube color={color} season="01" name="The Dog" nft="dog" number="0001"/>
-      )
-    } 
-
-    return(array.map((item) =>{
-      return(item)
-    }))
-  }
   
-  useEffect(() => {
-    document.documentElement.style.setProperty('--cube', `${zoom}px`);
-  }, [zoom]);
-
 
   return (
     <>
@@ -58,74 +248,31 @@ function App() {
         </Nav>
         </Container>
       </Navbar>
-    <div id="header">
-      <div id="wall">
-        {generate()}
+      <div id="grid-system">
+        <div id="sidebar">
+          <ul>
+            <li>OpenSeas</li>
+          </ul>
+        </div>
+        <div id="nft">
+          <Container className="preserve">
+            <h1 className='title'>Collection</h1>
+            <Row className="row-cols-auto preserve perspective">
+                {nftList.map((item)=>{
+                  return(
+                    <Cube 
+                      color={item.color} 
+                      season={item.season}
+                      name={item.name}
+                      nft={item.nft}
+                      number={item.number}
+                    />
+                  )
+                })}
+            </Row>
+          </Container>
+        </div>
       </div>
-      <div id="settings">
-        <Row>
-          <Col className='pb-5'>
-            <h3>Color</h3>
-            {["dark", "red", "blue"].map((item)=>{
-              return(
-                <Form.Check 
-                  name="group1"
-                  aria-label="Colors"
-                  type="radio"
-                  id={`${item}-color`}
-                  onChange={()=>{setColor(item)}}
-                  label={item.charAt(0).toUpperCase() + item.slice(1)}
-                >
-                </Form.Check>
-              )
-            })}
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <label for="customRange2" className="form-label">
-              <h3>Cube Size</h3>
-            </label>
-            <input 
-              type="range" 
-              className="form-range" 
-              min="150" max="400" 
-              id="customRange2" 
-              defaultValue={zoom}
-              onChange={(e)=>{setZoom(e.target.value)}}
-            />
-
-            <label for="rowRange" className="form-label">
-              <h3>Row Count</h3>
-            </label>
-            <input 
-              type="range" 
-              className="form-range" 
-              min="1" 
-              max="5" 
-              step="1" 
-              id="rowRange"
-              defaultValue={rowCount}
-              onChange={(e)=>{setRowCount(e.target.value)}}
-            />
-
-            <label for="colRange" className="form-label">
-              <h3>Col Count</h3>
-            </label>
-            <input 
-              type="range" 
-              className="form-range" 
-              min="1" 
-              max="5" 
-              step="1" 
-              id="colRange"
-              defaultValue={colCount}
-              onChange={(e)=>{setColCount(e.target.value)}}
-            />
-          </Col>
-        </Row>
-      </div>
-    </div>
     </>
   );
 }
