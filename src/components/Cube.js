@@ -16,7 +16,7 @@ const Cube = ({color, season, name, nft, number}) => {
     const [hover, setHover] = useState(false);
 
     return ( 
-    <div className="preserve col">
+    <div className="preserve">
         <div className={`cube ${hover ? "cube2":""}`} 
             onMouseEnter={()=>{setHover(true)}}
             onMouseLeave={()=>{setHover(false)}}

@@ -3,7 +3,7 @@
   --cube-front-color: var(--cube-front-color);
   --cubeHalf: calc(var(--cube) / 2);
   --front: #202020;
-  --front2: rgb(80, 80, 80);
+  --front2: rgb(216, 193, 91);
   --rotateWallX: 0;
 
   --blue: rgb(0, 174, 255);
@@ -52,7 +52,7 @@ body {
 } */
 
 .title {
-  font-size: 10em;
+  font-size: 8em;
   color: rgb(196, 196, 196);
   padding: 0;
   margin: 0;
@@ -61,7 +61,8 @@ body {
 
 .row-cols-auto {
   max-width: auto;
-  padding: 0;
+  margin: 3rem !important;
+  margin-bottom: 5rem !important;
   display: flex;
   justify-content: center;
 }
@@ -72,6 +73,7 @@ body {
 
 .preserve {
   transform-style: preserve-3d;
+  padding: 0 !important;
 }
 
 .perspective {
@@ -173,6 +175,7 @@ body {
   justify-content: center;
   align-items: center;
   transform-origin: left;
+  border: 1px solid black;
 
 }
 
@@ -275,12 +278,12 @@ body {
 
 .glass-door2 {
   box-shadow: 0px 0px 0px 50px var(--front2)!important;
-  /* transition: all ease .25s; */
+  transition: all ease .25s;
 }
 
 .glass-door2::before {
   box-shadow: 0px 0px 0px 50px var(--front2) !important;
-  /* transition: all ease .25s; */
+  transition: all ease .25s;
 }
 
 .cube-back { 

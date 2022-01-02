@@ -12,6 +12,21 @@ function App() {
   const [colCount, setColCount] = useState(1);
   const [color, setColor] = useState("green");
 
+  
+
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      let page = window.pageYOffset + 100
+      setOffset(page)
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--origin', `${offset}px`);
+  }, [offset]);
+
   const [nftList, setNftlist] = useState([
     {
       color: "red",
@@ -255,7 +270,7 @@ function App() {
           </ul>
         </div>
         <div id="nft">
-          <Container className="preserve">
+          <Container className="preserve pb-5">
             <h1 className='title'>Collection</h1>
             <Row className="row-cols-auto preserve perspective">
                 {nftList.map((item)=>{
