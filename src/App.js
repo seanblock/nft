@@ -14,7 +14,7 @@ function App() {
 
   const [tempColor, setTempColor] = useState("dark")
   const [tempSeason, setTempSeason] = useState(1)
-  const [tempName, setTempName] = useState("")
+  const [tempName, setTempName] = useState("Default Name")
   const [tempNft, setTempNft] = useState("https://lh3.googleusercontent.com/u-2FnHbaJ3U_KCDlmg2McX9Yfo7brsAzOffqihNXCGkHljA89SPPzwdjQiVSWcsvxCoj_ydBcDNCuZvHEekaYekaMEH4XX32k9US=w600")
   const [tempNumber, setTempNumber] = useState("0001")
 
@@ -124,13 +124,10 @@ function App() {
             </Col>
           </Row> 
           :
-          <Row>
-            <Col>
-              <Button 
-                onClick={()=>{setSidebar(true)}}
-                className="float-end m-3">Show Settings</Button>
-            </Col>
-          </Row>
+          <Button 
+            onClick={()=>{setSidebar(true)}}
+            className="float-end m-2"
+          >Show Settings</Button>
           }
         </div>
         <div id="nft">
